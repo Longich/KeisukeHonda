@@ -1,0 +1,20 @@
+<div class="container">
+  <%= link_to "TOPへ", root_url %>
+  <% if @win %>
+    <div class="text-center text-red lead">YOU WIN!</div>
+    <div class="text-center lead">お見事！あなたの勝利！負けた本田圭介からコメントが届いています！</div>
+    <%= image_tag 'honda_lose.png', alt: 'あなたの勝利', class: "img-responsive" %>
+  <% else %>
+    <div class="text-center text-red lead">YOU LOSE!</div>
+    <div class="text-center lead">残念、本田圭佑の勝利！</div>
+    <%= image_tag 'honda_win.png', alt: '本田圭介の勝利', class: "img-responsive" %>
+  <% end %>
+  <div class="text-center panel panel-default">
+    <div class="panel-heading">もう一度挑む</div>
+    <div class="panel-footer">
+      <%= link_to "本田にグーで勝つ", janken_path, class: "btn btn-primary" %>
+      <%= link_to "本田にチョキで勝つ", janken_path, class: "btn btn-primary" %>
+      <%= link_to "本田にパーで勝つ", janken_path, class: "btn btn-primary" %>
+    </div>
+  </div>
+</div>
